@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assests/CSS/style.css">
+    <link rel="stylesheet" href="./assests/bootstrap/bootstrap.min.css">
+    <script src="./assests/JS/jquery.slim.min.js"></script>
+    <script src="./assests/JS/popper.min.js"></script>
+    <script src="./assests/JS/bootstrap.bundle.min.js"></script>
+    <script src="./assests/JS/jscript.js"></script>
+    <script src="https://kit.fontawesome.com/2340707775.js" crossorigin="anonymous"></script>
+
+    <title>Dice Game</title>
+
+</head>
+
+<body class="bg-info">
+
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <h3 class="text-light">Dice Game</h3>
+    </nav>
+
+    <div class="container playerBoard">
+        <div class="row justify-content-around">
+            <div class="col-5">
+                <div class="contents">
+                    <label for="Player1">
+                        <h2 id="player1">Player 1</h2></label>
+                    <br>
+                    <img src="./assests/images/dice-6.png" alt="dice" class="diceCss" id="dice1">
+                    <br>
+                    <button type="button" id="rollPlayer1" class="btn-primary btn" disabled onclick="rollDice1()">
+                        Roll Dice
+                    </button>
+                </div>
+
+            </div>
+            <div class="col-5">
+                <div class="contents">
+                    <label for="Player2">
+                        <h2 id="player2">Player 2</h2></label>
+                    <br>
+                    <img src="./assests/images/dice-6.png" alt="dice" class="diceCss" id="dice2">
+                    <br>
+                    <button type="button" id="rollPlayer2" class="btn-primary btn" disabled onclick="rollDice2()">
+                        Roll Dice
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <h3 class="text-center">Score</h3>
+                <div class="row justify-content-center">
+                    <div class="col-6 border border-dark">
+                        Player 1
+                    </div>
+                    <div class="col-6 border border-dark">
+                        Player 2
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-6 border border-dark">
+                        <label for="p1Score" id="p1Score"> 0 </label>
+                    </div>
+                    <div class="col-6 border border-dark">
+                        <label for="p2Score" id="p2Score"> 0 </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <button type="button" id="start" class="btn-success btn" data-toggle="modal" data-target="#playerName">
+                    Start
+                </button>
+                <button type="button" id="restart" class="btn-success btn" disabled onclick="window.location.reload();">
+                    Restart
+                </button>
+                <div class="modal fade" id="playerName" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="adnm" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Enter Player Name</h5>
+                                <button type="button" class="btn" data-dismiss="modal">
+                                    <i class="fas fa-window-close"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body grid">
+                                <label for="Player1">Player 1</label>
+                                <input type="text" id="player1Name" placeholder="Player 1 Name">
+                                <label for="Player2">Player 2</label>
+                                <input type="text" id="player2Name" placeholder="Player 2 Name">
+                            </div>
+                            <div class="modal-footer">
+                                Click Here to Start the Game -->
+                                <button type="button" class="btn btn-primary" id="nameSubmit" onclick="addName()" data-dismiss="modal">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+</html>
